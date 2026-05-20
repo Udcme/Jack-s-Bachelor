@@ -15,23 +15,17 @@
     --muted: #888;
     --shabbat: #4a7c59;
     --shabbat-light: #6ab882;
-    --accent: #c9a84c33;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--dark); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
 
-  /* HERO */
   .hero {
     background: linear-gradient(160deg, #111 0%, #1a1400 60%, #0e0e0e 100%);
-    text-align: center;
-    padding: 60px 20px 50px;
-    border-bottom: 1px solid #2a2200;
-    position: relative;
-    overflow: hidden;
+    text-align: center; padding: 60px 20px 50px;
+    border-bottom: 1px solid #2a2200; position: relative; overflow: hidden;
   }
   .hero::before {
-    content: '';
-    position: absolute; inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: radial-gradient(ellipse at 50% 0%, #c9a84c22 0%, transparent 70%);
     pointer-events: none;
   }
@@ -39,56 +33,30 @@
   .hero h1 { font-size: clamp(2rem, 8vw, 4rem); font-weight: 800; letter-spacing: -1px; line-height: 1.1; }
   .hero h1 span { color: var(--gold); }
   .hero-dates { color: var(--muted); margin-top: 10px; font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; }
-
-  /* COUNTDOWN */
-  .countdown {
-    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
-    margin-top: 36px;
-  }
-  .cd-box {
-    background: var(--card); border: 1px solid #2a2200;
-    border-radius: 12px; padding: 16px 20px; min-width: 72px; text-align: center;
-  }
+  .countdown { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 36px; }
+  .cd-box { background: var(--card); border: 1px solid #2a2200; border-radius: 12px; padding: 16px 20px; min-width: 72px; text-align: center; }
   .cd-num { font-size: 2rem; font-weight: 800; color: var(--gold); line-height: 1; }
   .cd-label { font-size: 0.65rem; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 4px; }
 
-  /* NAV TABS */
   .tabs {
     display: flex; justify-content: center; gap: 4px; flex-wrap: wrap;
-    padding: 24px 16px 0; background: var(--dark);
-    position: sticky; top: 0; z-index: 100;
-    border-bottom: 1px solid #222;
-    background: rgba(14,14,14,0.97);
+    padding: 24px 16px 0; position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid #222; background: rgba(14,14,14,0.97);
     backdrop-filter: blur(8px);
   }
   .tab-btn {
     background: none; border: 1px solid #333; color: var(--muted);
     padding: 8px 16px; border-radius: 999px; cursor: pointer;
-    font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;
-    transition: all 0.2s;
+    font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s;
   }
-  .tab-btn:hover, .tab-btn.active {
-    background: var(--gold); color: #000; border-color: var(--gold); font-weight: 700;
-  }
+  .tab-btn:hover, .tab-btn.active { background: var(--gold); color: #000; border-color: var(--gold); font-weight: 700; }
 
-  /* SECTIONS */
   .section { padding: 40px 20px; max-width: 720px; margin: 0 auto; display: none; }
   .section.active { display: block; }
-  .section-title {
-    font-size: 0.7rem; letter-spacing: 4px; color: var(--gold);
-    text-transform: uppercase; margin-bottom: 24px;
-  }
+  .section-title { font-size: 0.7rem; letter-spacing: 4px; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; }
 
-  /* DAY CARD */
-  .day-card {
-    background: var(--card); border-radius: 16px; margin-bottom: 20px;
-    border: 1px solid #222; overflow: hidden;
-  }
-  .day-header {
-    padding: 14px 20px; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    background: var(--card2); user-select: none;
-  }
+  .day-card { background: var(--card); border-radius: 16px; margin-bottom: 20px; border: 1px solid #222; overflow: hidden; }
+  .day-header { padding: 14px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--card2); user-select: none; }
   .day-header h2 { font-size: 1rem; font-weight: 700; letter-spacing: 1px; }
   .day-header .day-date { font-size: 0.75rem; color: var(--gold); margin-top: 2px; }
   .day-chevron { color: var(--muted); transition: transform 0.3s; font-size: 1.2rem; }
@@ -96,45 +64,31 @@
   .day-body { display: none; padding: 16px; }
   .day-card.open .day-body { display: block; }
 
-  /* EVENT ITEM */
-  .event {
-    display: flex; gap: 14px; padding: 12px 0;
-    border-bottom: 1px solid #2a2a2a; align-items: flex-start;
-  }
+  .event { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid #2a2a2a; align-items: flex-start; }
   .event:last-child { border-bottom: none; }
-  .event-time {
-    min-width: 80px; font-size: 0.75rem; color: var(--gold);
-    font-weight: 700; padding-top: 3px; letter-spacing: 0.5px;
-  }
+  .event-time { min-width: 80px; font-size: 0.75rem; color: var(--gold); font-weight: 700; padding-top: 3px; letter-spacing: 0.5px; }
   .event-icon { font-size: 1.3rem; padding-top: 1px; }
   .event-content { flex: 1; }
   .event-title { font-weight: 700; font-size: 0.95rem; }
   .event-sub { font-size: 0.8rem; color: var(--muted); margin-top: 3px; }
-  .event-addr {
-    font-size: 0.75rem; color: #666; margin-top: 5px;
-    display: flex; align-items: flex-start; gap: 5px;
-  }
+  .event-addr { font-size: 0.75rem; color: #666; margin-top: 5px; }
   .event-addr a { color: #888; text-decoration: none; }
   .event-addr a:hover { color: var(--gold); }
-  .dist-badge {
-    display: inline-block; background: #2a2200; color: var(--gold);
-    border-radius: 999px; padding: 1px 8px; font-size: 0.7rem; margin-top: 5px;
-    border: 1px solid #3a3000;
-  }
+  .dist-badge { display: inline-block; background: #2a2200; color: var(--gold); border-radius: 999px; padding: 1px 8px; font-size: 0.7rem; margin-top: 5px; border: 1px solid #3a3000; }
   .assign { font-size: 0.72rem; color: #777; margin-top: 4px; font-style: italic; }
 
-  /* SHABBAT EVENTS */
+  .cal-btn {
+    display: inline-block; margin-top: 7px; background: none;
+    color: #555; border: 1px solid #333; border-radius: 999px;
+    padding: 3px 10px; font-size: 0.68rem; text-decoration: none;
+    letter-spacing: 0.5px; transition: all 0.2s; cursor: pointer;
+  }
+  .cal-btn:hover { background: #1a1a2e; color: #7ea8e0; border-color: #7ea8e0; }
+
   .event.shabbat .event-time { color: var(--shabbat-light); }
   .event.shabbat .event-title { color: var(--shabbat-light); }
-  .shabbat-banner {
-    background: linear-gradient(90deg, #1a2e1f, #111);
-    border: 1px solid #2d4a35; border-radius: 10px;
-    padding: 10px 14px; margin: 10px 0;
-    font-size: 0.8rem; color: var(--shabbat-light);
-    display: flex; align-items: center; gap: 8px;
-  }
+  .shabbat-banner { background: linear-gradient(90deg, #1a2e1f, #111); border: 1px solid #2d4a35; border-radius: 10px; padding: 10px 14px; margin: 10px 0; font-size: 0.8rem; color: var(--shabbat-light); display: flex; align-items: center; gap: 8px; }
 
-  /* MENU */
   .menu-day { margin-bottom: 28px; }
   .menu-day h3 { font-size: 0.75rem; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid #2a2200; }
   .meal-block { background: var(--card); border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #222; }
@@ -144,41 +98,26 @@
   .meal-by { font-size: 0.7rem; color: #666; margin-left: auto; font-style: italic; }
   .meal-note { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
 
-  /* BRING LIST */
   .bring-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   @media (max-width: 480px) { .bring-grid { grid-template-columns: 1fr; } }
-  .bring-item {
-    background: var(--card); border: 1px solid #222; border-radius: 10px;
-    padding: 10px 14px; display: flex; align-items: center; gap: 10px;
-    cursor: pointer; transition: border-color 0.2s;
-  }
+  .bring-item { background: var(--card); border: 1px solid #222; border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: border-color 0.2s; }
   .bring-item:hover { border-color: var(--gold); }
   .bring-item.checked { border-color: #2d4a35; background: #111d13; }
-  .bring-check {
-    width: 18px; height: 18px; border-radius: 4px; border: 2px solid #444;
-    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-    transition: all 0.2s; font-size: 0.75rem;
-  }
+  .bring-check { width: 18px; height: 18px; border-radius: 4px; border: 2px solid #444; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 0.75rem; }
   .bring-item.checked .bring-check { background: var(--shabbat); border-color: var(--shabbat); }
   .bring-name { font-size: 0.85rem; flex: 1; }
   .bring-item.checked .bring-name { text-decoration: line-through; color: var(--muted); }
   .bring-person { font-size: 0.7rem; color: var(--muted); }
 
-  /* ADDRESS CARD */
   .addr-cards { display: flex; flex-direction: column; gap: 12px; }
   .addr-card { background: var(--card); border: 1px solid #222; border-radius: 12px; padding: 16px; }
   .addr-card h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
   .addr-card .addr-line { font-size: 0.8rem; color: var(--muted); }
-  .addr-card a.map-link {
-    display: inline-block; margin-top: 8px; background: #2a2200; color: var(--gold);
-    border: 1px solid #3a3000; border-radius: 999px; padding: 4px 12px;
-    font-size: 0.72rem; text-decoration: none; letter-spacing: 1px;
-  }
+  .addr-card a.map-link { display: inline-block; margin-top: 8px; background: #2a2200; color: var(--gold); border: 1px solid #3a3000; border-radius: 999px; padding: 4px 12px; font-size: 0.72rem; text-decoration: none; letter-spacing: 1px; }
   .addr-card a.map-link:hover { background: var(--gold); color: #000; }
   .dist-row { font-size: 0.75rem; color: #666; margin-top: 6px; }
   .dist-row span { color: var(--gold); font-weight: 600; }
 
-  /* FOOTER */
   footer { text-align: center; padding: 40px 20px; color: #444; font-size: 0.75rem; letter-spacing: 1px; }
   footer strong { color: var(--gold); }
 </style>
@@ -198,10 +137,10 @@
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" onclick="showTab('schedule')">📅 Schedule</button>
-  <button class="tab-btn" onclick="showTab('menu')">🍽️ Menu</button>
-  <button class="tab-btn" onclick="showTab('bring')">🎒 To Bring</button>
-  <button class="tab-btn" onclick="showTab('locations')">📍 Locations</button>
+  <button class="tab-btn active" onclick="showTab('schedule',this)">📅 Schedule</button>
+  <button class="tab-btn" onclick="showTab('menu',this)">🍽️ Menu</button>
+  <button class="tab-btn" onclick="showTab('bring',this)">🎒 To Bring</button>
+  <button class="tab-btn" onclick="showTab('locations',this)">📍 Locations</button>
 </div>
 
 <!-- SCHEDULE -->
@@ -222,6 +161,7 @@
           <div class="event-title">Drive to Westtown</div>
           <div class="event-sub">Settle in, eat your own dinner, stock up at Walmart</div>
           <div class="event-addr">📍 <a href="https://maps.google.com/?q=220+Langlitz+Road,+Westtown+NY" target="_blank">220 Langlitz Road, Westtown, NY</a></div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%9A%97+Drive+to+Westtown&dates=20250528/20250529&details=Drive+to+220+Langlitz+Road%2C+Westtown+NY.+Settle+in%2C+dinner%2C+Walmart+stock+up.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
     </div>
@@ -242,6 +182,7 @@
           <div class="event-title">Breakfast</div>
           <div class="event-sub">Eggs, grilled cheese, pancakes</div>
           <div class="assign">Jack: egg pan, pancake batter, spatula, eggs, cheese</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8D%B3+Breakfast&dates=20250529T080000/20250529T090000&details=Eggs%2C+grilled+cheese%2C+pancakes.+Jack+brings+supplies.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -254,6 +195,7 @@
           <div class="event-addr">📍 <a href="https://maps.google.com/?q=525+Glenwood+Rd,+Pine+Island,+NY+10969" target="_blank">525 Glenwood Rd, Pine Island, NY 10969</a></div>
           <div class="dist-badge">🚗 ~15 min from house</div>
           <div class="assign">Isaac to handle · <a href="https://scenicfarmsgolf.com" target="_blank" style="color:#666;font-size:0.72rem;">scenicfarmsgolf.com</a></div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%E2%9B%B3+Golf+%26+Range&dates=20250529T093000/20250529T113000&details=Scenic+Farms+Golf+Course.+9+Holes+%2425+%2B+%245+clubs.+Range+%2410+large+bucket.+Isaac+handling.&location=525+Glenwood+Rd%2C+Pine+Island%2C+NY+10969" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -262,6 +204,7 @@
         <div class="event-icon">🔥</div>
         <div class="event-content">
           <div class="event-title">Lunch — BBQ at the House</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%94%A5+BBQ+Lunch&dates=20250529T120000/20250529T130000&details=BBQ+lunch+at+the+house.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -274,6 +217,7 @@
           <div class="event-addr">📍 <a href="https://maps.google.com/?q=44+Clove+Rd,+Sussex,+NJ+07461" target="_blank">44 Clove Rd, Sussex, NJ 07461</a></div>
           <div class="dist-badge">🚗 ~20 min from house · ~20 min back to house</div>
           <div class="assign">Barry to handle</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8E%AF+Clay+Shooting&dates=20250529T140000/20250529T160000&details=Clove+Spring+Range+%E2%80%94+Skeet%2C+Trap%2C+Sporting+Clays.+Barry+handling.&location=44+Clove+Rd%2C+Sussex%2C+NJ+07461" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -285,6 +229,7 @@
           <div class="event-sub">Hansen Park</div>
           <div class="event-addr">📍 Hansen Park, Westtown area <em style="color:#555"> — confirm address</em></div>
           <div class="dist-badge">📍 Near the house</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8F%93+Pickleball+%2F+Tennis&dates=20250529T163000/20250529T183000&details=Pickleball+or+tennis+at+Hansen+Park%2C+or+chill+at+the+Airbnb.&location=Hansen+Park%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -296,20 +241,27 @@
         <div class="event-content">
           <div class="event-title">Prepare for Shabbat</div>
           <div class="event-sub">Fry Chicken, set table</div>
-          <div class="assign">Jack: fried chicken & lahmagine; Josh: coordinate Ray T menu & order</div>
+          <div class="assign">Jack: fried chicken & lahmagine · Josh: coordinate Ray T menu & order</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%95%AF%EF%B8%8F+Shabbat+Prep&dates=20250529T180000/20250529T194500&details=Fry+chicken%2C+set+table.+Jack+handles+fried+chicken+%26+lahmagine.+Josh+coordinates+Ray+T+menu.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
       <div class="event shabbat">
         <div class="event-time">7:45 PM</div>
         <div class="event-icon">🕍</div>
-        <div class="event-content"><div class="event-title">Mincha & Arvit</div></div>
+        <div class="event-content">
+          <div class="event-title">Mincha & Arvit</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%95%8D+Mincha+%26+Arvit&dates=20250529T194500/20250529T200500&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
 
       <div class="event shabbat">
         <div class="event-time">8:05 PM</div>
         <div class="event-icon">🕯️</div>
-        <div class="event-content"><div class="event-title">Candle Lighting</div></div>
+        <div class="event-content">
+          <div class="event-title">Candle Lighting</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%95%AF%EF%B8%8F+Candle+Lighting&dates=20250529T200500/20250529T201500&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
 
       <div class="event shabbat">
@@ -318,6 +270,7 @@
         <div class="event-content">
           <div class="event-title">Shabbat Dinner</div>
           <div class="event-sub">Full spread — see Menu tab</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8D%B7+Shabbat+Dinner&dates=20250529T203000/20250529T220000&details=Full+Shabbat+dinner+spread.+See+menu+for+details.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -336,7 +289,10 @@
       <div class="event shabbat">
         <div class="event-time">10:15–11 AM</div>
         <div class="event-icon">🕍</div>
-        <div class="event-content"><div class="event-title">Shacharit (Minyan)</div></div>
+        <div class="event-content">
+          <div class="event-title">Shacharit (Minyan)</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%95%8D+Shacharit&dates=20250530T101500/20250530T110000&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
 
       <div class="event shabbat">
@@ -345,6 +301,7 @@
         <div class="event-content">
           <div class="event-title">Shabbat Lunch</div>
           <div class="event-sub">Leftovers from Friday night</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8D%BD%EF%B8%8F+Shabbat+Lunch&dates=20250530T123000/20250530T140000&details=Leftovers+from+Friday+night.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
@@ -354,13 +311,17 @@
         <div class="event-content">
           <div class="event-title">Outdoor Activities</div>
           <div class="event-sub">Spike, Football, Wiffle Ball, Pool, Park</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8F%90+Outdoor+Activities&dates=20250530T130000/20250530T190000&details=Spike%2C+Football%2C+Wiffle+Ball%2C+Pool%2C+Park&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
       <div class="event shabbat">
         <div class="event-time">9:15 PM</div>
         <div class="event-icon">✨</div>
-        <div class="event-content"><div class="event-title">Shabbat Ends — Havdalah</div></div>
+        <div class="event-content">
+          <div class="event-title">Shabbat Ends — Havdalah</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%E2%9C%A8+Havdalah&dates=20250530T211500/20250530T213000&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
 
       <div class="event">
@@ -370,14 +331,14 @@
           <div class="event-title">Mentalist & Firepit</div>
           <div class="event-sub">Saturday night entertainment</div>
           <div class="assign">Squo & Teddy to handle</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%94%AE+Mentalist+%26+Firepit&dates=20250530T220000/20250531T000000&details=Mentalist+%26+firepit+night.+Squo+%26+Teddy+handling.&location=220+Langlitz+Road%2C+Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
         </div>
       </div>
 
-      <div class="event" style="background:#1a1010; border-radius:8px; border: 1px solid #3a1818; padding: 10px 12px; margin-top: 8px;">
-        <div class="event-time" style="color:#c06060;"></div>
+      <div class="event" style="background:#1a1010;border-radius:8px;border:1px solid #3a1818;padding:10px 12px;margin-top:8px;">
         <div class="event-icon">👋</div>
         <div class="event-content">
-          <div class="event-title" style="color:#c06060; font-size:0.82rem;">Teddy, Albert & Joshua head home after Shabbat</div>
+          <div class="event-title" style="color:#c06060;font-size:0.82rem;">Teddy, Albert & Joshua head home after Shabbat</div>
         </div>
       </div>
 
@@ -394,17 +355,29 @@
       <div class="event">
         <div class="event-time">TBD</div>
         <div class="event-icon">🚤</div>
-        <div class="event-content"><div class="event-title">Watersports on the Lake?</div><div class="event-sub">TBD — vote on the day</div></div>
+        <div class="event-content">
+          <div class="event-title">Watersports on the Lake?</div>
+          <div class="event-sub">TBD — vote on the day</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%9A%A4+Watersports&dates=20250531/20250601&details=TBD+%E2%80%94+vote+on+the+day&location=Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
       <div class="event">
         <div class="event-time">TBD</div>
         <div class="event-icon">🥾</div>
-        <div class="event-content"><div class="event-title">Hike?</div><div class="event-sub">TBD — vote on the day</div></div>
+        <div class="event-content">
+          <div class="event-title">Hike?</div>
+          <div class="event-sub">TBD — vote on the day</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%A5%BE+Hike&dates=20250531/20250601&details=TBD+%E2%80%94+vote+on+the+day&location=Westtown%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
       <div class="event">
         <div class="event-time">TBD</div>
         <div class="event-icon">🍊</div>
-        <div class="event-content"><div class="event-title">Mets Game?</div><div class="event-sub">TBD — vote on the day</div></div>
+        <div class="event-content">
+          <div class="event-title">Mets Game?</div>
+          <div class="event-sub">TBD — vote on the day</div>
+          <a class="cal-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Jack%27s+Bachelor+%F0%9F%8D%8A+Mets+Game&dates=20250531/20250601&details=TBD+%E2%80%94+vote+on+the+day&location=Citi+Field%2C+Queens%2C+NY" target="_blank">📆 Add to Calendar</a>
+        </div>
       </div>
     </div>
   </div>
@@ -413,7 +386,6 @@
 <!-- MENU -->
 <div class="section" id="tab-menu">
   <div class="section-title">Weekend Menu</div>
-
   <div class="menu-day">
     <h3>Thursday — May 28</h3>
     <div class="meal-block">
@@ -421,7 +393,6 @@
       <div class="meal-item"><span>Figure it out yourself</span></div>
     </div>
   </div>
-
   <div class="menu-day">
     <h3>Friday — May 29</h3>
     <div class="meal-block">
@@ -431,8 +402,7 @@
       <div class="meal-item"><span>Pancakes</span><span class="meal-by">Jack (batter + spatula)</span></div>
     </div>
     <div class="meal-block">
-      <div class="meal-name">🍕 Lunch</div>
-      <div class="meal-item"><span>Pizza</span></div>
+      <div class="meal-name">🔥 Lunch — BBQ at the House</div>
     </div>
     <div class="meal-block">
       <div class="meal-name">🕯️ Shabbat Dinner</div>
@@ -447,12 +417,11 @@
       <div class="meal-item"><span>Corned Beef</span><span class="meal-by">Ray T</span></div>
       <div class="meal-item"><span>Peas & Kibble</span><span class="meal-by">Ray T?</span></div>
       <div class="meal-item"><span>Potatoes</span><span class="meal-by">Ray T</span></div>
-      <div class="meal-item" style="margin-top:4px; color:#c9a84c;"><span>🍰 Dessert</span></div>
+      <div class="meal-item" style="margin-top:4px;color:#c9a84c;"><span>🍰 Dessert</span></div>
       <div class="meal-item"><span>Kokosh, Chocolate Spelt Cookies, Kineret, Cinnamon Buns</span></div>
       <div class="meal-note">📋 Josh to coordinate Ray T menu & order</div>
     </div>
   </div>
-
   <div class="menu-day">
     <h3>Saturday — May 30</h3>
     <div class="meal-block">
@@ -477,44 +446,36 @@
 <div class="section" id="tab-locations">
   <div class="section-title">Addresses & Distances</div>
   <div class="addr-cards">
-
     <div class="addr-card">
       <h3>🏠 Home Base</h3>
       <div class="addr-line">220 Langlitz Road, Westtown, NY</div>
       <a class="map-link" href="https://maps.google.com/?q=220+Langlitz+Road,+Westtown+NY" target="_blank">Open in Maps ↗</a>
     </div>
-
     <div class="addr-card">
       <h3>🏓 Hansen Park — Pickleball / Tennis</h3>
       <div class="addr-line">Hansen Park, Westtown area <em style="color:#555;font-size:0.75rem;">— confirm exact address</em></div>
       <div class="dist-row">From house: <span>TBD — nearby</span></div>
     </div>
-
+    <div class="addr-card">
+      <h3>⛳ Scenic Farms Golf Course</h3>
+      <div class="addr-line">525 Glenwood Rd, Pine Island, NY 10969</div>
+      <div class="dist-row">From house: <span>~15 min</span></div>
+      <a class="map-link" href="https://maps.google.com/?q=525+Glenwood+Rd,+Pine+Island,+NY+10969" target="_blank">Open in Maps ↗</a>
+      <br><a class="map-link" href="https://scenicfarmsgolf.com" target="_blank" style="margin-left:6px;">Website ↗</a>
+    </div>
     <div class="addr-card">
       <h3>🎯 Clove Spring Range — Clay Shooting</h3>
       <div class="addr-line">44 Clove Rd, Sussex, NJ 07461</div>
       <div class="dist-row">From house: <span>~20 min</span></div>
-      <div class="dist-row">Phone: <span>(201) 983-0388</span></div>
+      <div class="dist-row">Back to house: <span>~20 min</span></div>
       <a class="map-link" href="https://maps.google.com/?q=44+Clove+Rd,+Sussex,+NJ+07461" target="_blank">Open in Maps ↗</a>
     </div>
-
-    <div class="addr-card">
-      <h3>⛳ Scenic Farms Golf Course</h3>
-      <div class="addr-line">525 Glenwood Rd, Pine Island, NY 10969</div>
-      <div class="dist-row">From clay shooting: <span>~12 min</span></div>
-      <div class="dist-row">From house: <span>~15 min</span></div>
-      <div class="dist-row">Phone: <span>(845) 258-4455</span></div>
-      <a class="map-link" href="https://maps.google.com/?q=525+Glenwood+Rd,+Pine+Island,+NY+10969" target="_blank">Open in Maps ↗</a>
-      <br><a class="map-link" href="https://scenicfarmsgolf.com" target="_blank" style="margin-left:6px;">Website ↗</a>
-    </div>
-
   </div>
 </div>
 
 <footer>Made with ❤️ for <strong>Jack H's Bachelor Weekend</strong> · May 28–31, 2025</footer>
 
 <script>
-// Countdown
 function updateCountdown() {
   const target = new Date('2025-05-28T12:00:00').getTime();
   const now = new Date().getTime();
@@ -535,51 +496,33 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Tabs
-function showTab(id) {
+function showTab(id, btn) {
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
 
-// Day toggle
 function toggleDay(el) {
   el.parentElement.classList.toggle('open');
 }
 
-// Bring list
 const bringItems = [
-  {name:'Wok', person:''},
-  {name:'Portable BBQ', person:'Kurtz'},
-  {name:'Propane Tank', person:'Kurtz'},
-  {name:'Plates', person:'Kurtz'},
-  {name:'Utensils', person:'Kurtz'},
-  {name:'Challah', person:'Kurtz'},
-  {name:'Salt & Pepper', person:''},
-  {name:'Condiments', person:''},
-  {name:'Cups', person:'Kurtz'},
-  {name:'Tin Foil', person:''},
-  {name:'Tins', person:''},
-  {name:'Kineret', person:''},
-  {name:'Snacks', person:''},
-  {name:'Alcohol', person:'Teddy'},
-  {name:'Water Bottles', person:''},
-  {name:'Grape Juice', person:'Kurtz'},
-  {name:'Wiffle Balls', person:'Kurtz/Jack'},
-  {name:'Wiffle Bats', person:'Kurtz/Jack'},
-  {name:'Pickleball Equipment', person:''},
-  {name:'Tennis Equipment', person:''},
-  {name:'Football', person:''},
+  {name:'Wok',person:''},{name:'Portable BBQ',person:'Kurtz'},{name:'Propane Tank',person:'Kurtz'},
+  {name:'Plates',person:'Kurtz'},{name:'Utensils',person:'Kurtz'},{name:'Challah',person:'Kurtz'},
+  {name:'Salt & Pepper',person:''},{name:'Condiments',person:''},{name:'Cups',person:'Kurtz'},
+  {name:'Tin Foil',person:''},{name:'Tins',person:''},{name:'Kineret',person:''},
+  {name:'Snacks',person:''},{name:'Alcohol',person:'Teddy'},{name:'Water Bottles',person:''},
+  {name:'Grape Juice',person:'Kurtz'},{name:'Wiffle Balls',person:'Kurtz/Jack'},
+  {name:'Wiffle Bats',person:'Kurtz/Jack'},{name:'Pickleball Equipment',person:''},
+  {name:'Tennis Equipment',person:''},{name:'Football',person:''},
 ];
-
 const bringList = document.getElementById('bringList');
 const checked = {};
 bringItems.forEach((item, i) => {
   const el = document.createElement('div');
   el.className = 'bring-item';
-  el.id = 'bring-' + i;
-  el.innerHTML = `<div class="bring-check" id="chk-${i}"></div><div><div class="bring-name">${item.name}</div>${item.person ? `<div class="bring-person">${item.person}</div>` : ''}</div>`;
+  el.innerHTML = `<div class="bring-check" id="chk-${i}"></div><div><div class="bring-name">${item.name}</div>${item.person?`<div class="bring-person">${item.person}</div>`:''}</div>`;
   el.onclick = () => {
     checked[i] = !checked[i];
     el.classList.toggle('checked', checked[i]);
